@@ -1,0 +1,14 @@
+2021-06-17 08:41:44 ERROR DefaultBotSession:325 - Cannot invoke "org.telegram.telegrambots.meta.api.objects.Message.getChatId()" because "msg" is null
+java.lang.NullPointerException: Cannot invoke "org.telegram.telegrambots.meta.api.objects.Message.getChatId()" because "msg" is null
+	at Bot.processNonCommandUpdate(Bot.java:41)
+	at org.telegram.telegrambots.extensions.bots.commandbot.TelegramLongPollingCommandBot.onUpdateReceived(TelegramLongPollingCommandBot.java:70)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
+	at org.telegram.telegrambots.meta.generics.LongPollingBot.onUpdatesReceived(LongPollingBot.java:27)
+	at org.telegram.telegrambots.updatesreceivers.DefaultBotSession$HandlerThread.run(DefaultBotSession.java:320)
+2021-06-17 08:42:26 ERROR DefaultBotSession:325 - Cannot invoke "org.telegram.telegrambots.meta.api.objects.Message.getChatId()" because "msg" is null
+java.lang.NullPointerException: Cannot invoke "org.telegram.telegrambots.meta.api.objects.Message.getChatId()" because "msg" is null
+	at Bot.processNonCommandUpdate(Bot.java:41)
+	at org.telegram.telegrambots.extensions.bots.commandbot.TelegramLongPollingCommandBot.onUpdateReceived(TelegramLongPollingCommandBot.java:70)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
+	at org.telegram.telegrambots.meta.generics.LongPollingBot.onUpdatesReceived(LongPollingBot.java:27)
+	at org.telegram.telegrambots.updatesreceivers.DefaultBotSession$HandlerThread.run(DefaultBotSession.java:320)
