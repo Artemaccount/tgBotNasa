@@ -1,9 +1,8 @@
-package commands;
+package serviceCommands;
 
 import org.telegram.telegrambots.meta.api.objects.Chat;
 import org.telegram.telegrambots.meta.api.objects.User;
 import org.telegram.telegrambots.meta.bots.AbsSender;
-import utils.Utils;
 
 
 /**
@@ -17,8 +16,7 @@ public class StartCommand extends ServiceCommand {
 
     @Override
     public void execute(AbsSender absSender, User user, Chat chat, String[] strings) {
-        String userName = Utils.getUserName(user);
-        sendAnswer(absSender, chat.getId(), this.getCommandIdentifier(), userName,
+        sendAnswer(absSender, chat.getId(),
                 "Привет!\uD83D\uDE4B\u200D♂️ Вот список команд:" +
                         "\n /help - расскажу что я умею" +
                         "\n /pic - пришлю пикчу");

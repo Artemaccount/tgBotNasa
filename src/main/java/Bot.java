@@ -1,12 +1,10 @@
-import commands.HelpCommand;
+import serviceCommands.HelpCommand;
 import pictureSender.PicCommand;
-import commands.StartCommand;
-import utils.Utils;
+import serviceCommands.StartCommand;
 import org.telegram.telegrambots.extensions.bots.commandbot.TelegramLongPollingCommandBot;
 import org.telegram.telegrambots.meta.api.methods.send.SendMessage;
 import org.telegram.telegrambots.meta.api.objects.Message;
 import org.telegram.telegrambots.meta.api.objects.Update;
-import org.telegram.telegrambots.meta.api.objects.User;
 import org.telegram.telegrambots.meta.exceptions.TelegramApiException;
 
 public final class Bot extends TelegramLongPollingCommandBot {
@@ -39,27 +37,14 @@ public final class Bot extends TelegramLongPollingCommandBot {
     public void processNonCommandUpdate(Update update) {
         Message msg = update.getMessage();
         Long chatId = msg.getChatId();
-        String userName = Utils.getUserName(msg);
-        setAnswer(chatId, userName, "Не является командой");
+        setAnswer(chatId, "Не является командой");
     }
-
-    /**
-     * Формирование имени пользователя
-     * @param msg сообщение
-     */
-    private String getUserName(Message msg) {
-        User user = msg.getFrom();
-        String userName = user.getUserName();
-        return (userName != null) ? userName : String.format("%s %s", user.getLastName(), user.getFirstName());
-    }
-
     /**
      * Отправка ответа
      * @param chatId id чата
-     * @param userName имя пользователя
      * @param text текст ответа
      */
-    private void setAnswer(Long chatId, String userName, String text) {
+    private void setAnswer(Long chatId, String text) {
         SendMessage answer = new SendMessage();
         answer.setText(text);
         answer.setChatId(chatId.toString());
