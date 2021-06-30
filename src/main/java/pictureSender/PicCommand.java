@@ -49,7 +49,9 @@ public class PicCommand extends OperationCommand {
         message.setChatId(chatId.toString());
         message.setText(pictureSender.getExplanation());
         try {
-            absSender.execute(createPhoto(chatId, pictureSender.getUrl()));
+            //absSender.execute(createPhoto(chatId, pictureSender.getUrl()));
+            absSender.execute(message);
+            message.setText(pictureSender.getUrl());
             absSender.execute(message);
         } catch (IOException | RuntimeException | TelegramApiException e) {
             e.printStackTrace();
